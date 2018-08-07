@@ -54,9 +54,7 @@ Route::prefix('parametrage')->group(function(){
         return view('parametrage.home');
     });
 
-    Route::get('/utilisateurs', function (){
-        return view('parametrage.utilisateur');
-    });
+    Route::get('/utilisateurs', 'UserController@index');
 
     Route::get('/applications', function (){
         return view('parametrage.applications');

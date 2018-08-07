@@ -29,41 +29,26 @@
                         <th>Ministère</th>
                         <th>Direction</th>
                         <th>Role</th>
-                        <th>Statut</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Marie Yao</td>
-                        <td>marielaureyao2016@gmail.com</td>
-                        <td>Ministère de l'économie et des finances</td>
-                        <td>DGBF</td>
-                        <td>Testeur</td>
-                        <td>Active</td>
-                        <td>
-                            <div class="btn-group" role="group" aria-label="Basic example">
-                                <button type="button" class="btn btn-sm btn-secondary">Modifier</button>
-                                <button type="button" class="btn btn-sm  btn-secondary">Supprimer</button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Marie Yao</td>
-                        <td>marielaureyao2016@gmail.com</td>
-                        <td>Ministère de l'économie et des finances</td>
-                        <td>DGBF</td>
-                        <td>Testeur</td>
-                        <td>Active</td>
-                        <td>
-                            <div class="btn-group" role="group" aria-label="Basic example">
-                                <button type="button" class="btn btn-sm btn-secondary">Modifier</button>
-                                <button type="button" class="btn btn-sm  btn-secondary">Supprimer</button>
-                            </div>
-                        </td>
-                    </tr>
+                    @foreach($users as $user)
+                        <tr>
+                            <th scope="row">{{ $user->id }}</th>
+                            <td>{{ $user->nom }} {{ $user->prenoms }}</td>
+                            <td>{{ $user->email }}</td>
+                            <td>{{ $user->ministere }}</td>
+                            <td>{{ $user->direction }}</td>
+                            <td>{{ $user->role }}</td>
+                            <td>
+                                <div class="btn-group" role="group" aria-label="Basic example">
+                                    <button type="button" class="btn btn-sm btn-secondary">Modifier</button>
+                                    <button type="button" class="btn btn-sm  btn-secondary">Supprimer</button>
+                                </div>
+                            </td>
+                        </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>
